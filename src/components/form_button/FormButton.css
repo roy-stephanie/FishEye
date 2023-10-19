@@ -1,0 +1,60 @@
+@import url('../../css/_variables.css');
+
+.FormButton {
+    width: 170px;
+    height: 69px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: var(--primary-color);
+    align-self: center;
+    font-size: 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.FormButton_Modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 35%;
+    height: 85%;
+    margin: auto;
+    transform: translate(-50%, -50%);
+    padding: 5px 25px;
+    background: #DB8876;
+}
+
+.FormButton_Modal_Close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    content: '';
+}
+
+.FormButton_Modal_Content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 64px;
+}
+
+.HeaderPhotographer_Portrait {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+}
+
+.HeaderPhotographer_Portrait > img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}

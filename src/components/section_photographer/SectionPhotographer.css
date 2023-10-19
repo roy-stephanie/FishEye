@@ -1,0 +1,79 @@
+@import "../../css/_variables.css";
+
+.CardPhotographer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.CardPhotographer_Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.CardPhotographer_Container_Img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.CardPhotographer_Img {
+    object-fit: cover;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.CardPhotographer_Name {
+    font-size: 25px;
+    color: var(--secondary-color);
+}
+
+.CardPhotographer_Location {
+    display: flex;
+    gap: 5px;
+    font-size: 13px;
+    color: var(--primary-color);
+}
+
+.CardPhotographer_TagLine {
+    font-size: 10px;
+}
+
+.CardPhotographer_Price {
+    font-size: 9px;
+    line-height: 12px;
+    color: var(--tertiary-color);
+}
+
+@media only screen and (min-width: 992px) {
+    .CardPhotographer {
+        width: 50%;
+    }
+    .CardPhotographer_Container_Img {
+        width: 200px;
+        height: 200px;
+    }
+    .CardPhotographer_Name {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (min-width:1200px)  {
+    .CardPhotographer {
+        width: 31%;
+    }
+    .CardPhotographer_Container_Img {
+        width: 250px;
+        height: 250px;
+    }
+    .CardPhotographer_Name {
+        font-size: 36px;
+    }
+}

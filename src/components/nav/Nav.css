@@ -1,0 +1,54 @@
+@import "../../css/_variables.css";
+
+.Nav {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    height: 100px;
+    padding: 20px 0;
+    font-size: 18px;
+    list-style-type: none;
+    color: var(--primary-color);
+}
+
+.Nav > li {
+    margin: 0 25px;
+}
+
+.Nav > li > a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.Nav_Logo {
+    width: 100px;
+}
+
+@media only screen and (min-width: 992px) {
+    .Nav {
+        font-size: 26px;
+    }
+
+    .Nav > li {
+        margin: 0 150px;
+    }
+
+    .Nav_Logo {
+        width: 150px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .Nav {
+        font-size: 36px;
+    }
+
+    .Nav > li {
+        margin: 0 250px;
+    }
+
+    .Nav_Logo {
+        width: 200px;
+    }
+}
