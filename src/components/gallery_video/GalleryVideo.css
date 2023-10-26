@@ -1,0 +1,15 @@
+.GalleryVideo {
+    width: 100%;
+    height: 350px;
+    border-radius: 5px;
+}
+
+.GalleryVideo > video {
+    width: 100%;
+    height: 350px;
+    border-radius: 5px;
+}
+
+video {
+    object-fit: fill;
+}

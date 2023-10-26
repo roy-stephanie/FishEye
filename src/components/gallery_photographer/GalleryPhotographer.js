@@ -2,13 +2,15 @@ import LikesAndHeart from '../likes_and_heart/LikesAndHeart';
 import './GalleryPhotographer.css';
 import { useEffect, useState } from 'react';
 import LikesAndPrice from '../likes_and_price/LikesAndPrice';
+import GalleryImage from '../gallery_image/GalleryImage';
+import GalleryVideo from '../gallery_video/GalleryVideo';
 
 export default function GalleryPhotographer({ photographer, imagesPhotographer }) {
   const host = window.location.host;
   const [photographerLikes, setPhotographerLikes] = useState(0);
 
   const handleCountLikes = (count) => {
-    setPhotographerLikes(prevState => prevState + count)
+    setPhotographerLikes(prevState => prevState + count);
   };
 
   useEffect(() => {
@@ -29,9 +31,12 @@ export default function GalleryPhotographer({ photographer, imagesPhotographer }
           {imagesPhotographer ? imagesPhotographer.map((image, index) => {
             return (
               <div key={`${index}`}>
-                <div>
-                  <img src={`http://${host}/images/photographers/${photographer.id}/${image.image}`} alt='' />
-                </div>
+                {image.image &&
+                  <GalleryImage host={host} photographerId={photographer.id} image={image.image} />
+                }
+                {image.video &&
+                  <GalleryVideo host={host} photographerId={photographer.id} video={image.video}/>
+                }
                 <div className='GalleryPhotographer_Gallery_Content'>
                   <div>{image.title}</div>
                   <LikesAndHeart likes={image.likes} countLikes={count => handleCountLikes(count)} />
