@@ -1,0 +1,28 @@
+@import "../../css/_variables.css";
+
+.Heart_Gallery_Content_Info > div:first-child {
+    font-size: 22px;
+    line-height: 32px;
+    color: var(--primary-color);
+}
+
+.Heart {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Heart > svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 21px;
+    height: 24px;
+}
+
+.Heart:hover {
+    cursor: pointer;
+}

@@ -26,19 +26,20 @@
 }
 
 .GalleryPhotographer_Gallery_Content {
+    line-height: 32px;
     display: flex;
     justify-content: space-between;
 }
 
 .GalleryPhotographer_Gallery_Content > div:first-child {
-    font-size: 24px;
+    font-size: 22px;
+    line-height: 32px;
     color: var(--primary-color);
 }
 
 .GalleryPhotographer_Gallery_Content > div:last-child {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     column-gap: 5px;
 }
 
