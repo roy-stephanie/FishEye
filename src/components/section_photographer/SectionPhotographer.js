@@ -6,9 +6,11 @@ export default function SectionPhotographer({photographer}) {
     return (
         <section className="CardPhotographer">
             <div className="CardPhotographer_Container">
-                <a href={`http://${host}/photographer/${photographer.id}`} className="CardPhotographer_Container_Img">
-                    <img className="CardPhotographer_Img" src={`http://${host}/images/photographers/Photographers-ID-Photos/${photographer.portrait}`} alt=""/>
-                </a>
+                <div className="CardPhotographer_Container_Img">
+                    <a href={`http://${host}/photographer/${photographer.id}`}>
+                        <img className="CardPhotographer_Img" src={`http://${host}/images/photographers/Photographers-ID-Photos/${photographer.portrait}`} alt=""/>
+                    </a>
+                </div>
                 <div className="CardPhotographer_Name">{photographer.name}</div>
                 <div className="CardPhotographer_Location">
                     <div>{photographer.city},</div>

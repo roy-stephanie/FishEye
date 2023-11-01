@@ -28,7 +28,7 @@ export default function GalleryPhotographer({ photographer, imagesPhotographer }
           Trier par button
         </header>
         <div className='GalleryPhotographer_Gallery'>
-          {imagesPhotographer ? imagesPhotographer.map((image, index) => {
+          {imagesPhotographer && imagesPhotographer.map((image, index) => {
             return (
               <div key={`${index}`}>
                 {image.image &&
@@ -43,7 +43,7 @@ export default function GalleryPhotographer({ photographer, imagesPhotographer }
                 </div>
               </div>
             );
-          }) : <div>Loading ...</div>}
+          })}
         </div>
       </section>
       <LikesAndPrice likes={photographerLikes} price={photographer.price} />
