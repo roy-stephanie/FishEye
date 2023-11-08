@@ -1,7 +1,9 @@
+import './GalleryImage.css';
+
 export default function GalleryImage({ host, photographerId, image }) {
   return (
-    <div>
-      <img src={`http://${host}/images/photographers/${photographerId}/${image}`} alt='' />
+    <div className='GalleryImage'>
+      <img src={`http://${host}/images/photographers/${photographerId}/${image.image}`} id={image.id} alt='' />
     </div>
   );
 }

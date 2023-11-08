@@ -4,20 +4,20 @@
     font-size: 22px;
     line-height: 32px;
     color: var(--primary-color);
+    display: flex;
+    justify-content: flex-end;
 }
 
 .Heart {
-    width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 
 .Heart > svg {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     width: 21px;
     height: 24px;
