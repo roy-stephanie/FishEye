@@ -4,11 +4,14 @@ import LikesAndPrice from '../likes_and_price/LikesAndPrice';
 import LightBoxMedia from '../lightbox/LightBoxMedia';
 import MediaRender from '../lightbox/MediaRender';
 import UseScreenWidth from '../../utils/useScreenWidth';
+import SortImagesPhotographer from '../sort_images_photographer/sortImagesPhotographer';
+import SortImages from '../../utils/sortImages';
 import './GalleryPhotographer.css';
 
 export default function GalleryPhotographer({ photographer, imagesPhotographer }) {
   const host = window.location.host;
   const widthScreen = UseScreenWidth();
+  const [sortImagesPhotographer, setSortImagesPhotographer] = useState(imagesPhotographer);
   const [photographerLikes, setPhotographerLikes] = useState(0);
   const [openLightBox, setOpenLightBox] = useState(false);
   const [imageForLightBox, setImageForLightBox] = useState({});
@@ -22,7 +25,13 @@ export default function GalleryPhotographer({ photographer, imagesPhotographer }
     setImageForLightBox(image);
   };
 
+  const handleSort = (sort) => {
+    setSortImagesPhotographer(SortImages(imagesPhotographer, sort));
+  }
+
   useEffect(() => {
+    console.log(imagesPhotographer);
+    setSortImagesPhotographer(SortImages(imagesPhotographer, 'popularity'));
     let totalLikes = 0;
     imagesPhotographer.map(img => {
       totalLikes = totalLikes + img.likes;
@@ -34,12 +43,13 @@ export default function GalleryPhotographer({ photographer, imagesPhotographer }
     <>
       <section>
         <header>
-          Trier par button
+          <div className='Photographer_Gallery_Sort'>
+            <SortImagesPhotographer sort={handleSort} />
+          </div>
         </header>
-
         {!openLightBox ?
           <div className='Photographer_Gallery'>
-            {imagesPhotographer && imagesPhotographer.map((image, index) => {
+            {sortImagesPhotographer && sortImagesPhotographer.map((image, index) => {
               return (
                 <div key={`media-${index}`}>
                   <div onClick={e => handleOpenLightBox(image)}>
@@ -53,11 +63,10 @@ export default function GalleryPhotographer({ photographer, imagesPhotographer }
                 </div>
               );
             })}
-          </div>
-          :
+          </div> :
           <LightBoxMedia host={host} widthScreen={widthScreen} photographerId={photographer.id} image={imageForLightBox}
-                         imagesPhotographer={imagesPhotographer} closeLightBox={e => handleOpenLightBox(e)} />}
-
+                         imagesPhotographer={sortImagesPhotographer} closeLightBox={e => handleOpenLightBox(e)} />
+        }
       </section>
       {!openLightBox && <LikesAndPrice likes={photographerLikes} price={photographer.price} />}
     </>

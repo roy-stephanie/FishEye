@@ -1,0 +1,13 @@
+.SortImagesPhotographerLabel {
+    margin-right: 10px;
+}
+
+.SortImagesPhotographerDropdown {
+    position: relative;
+    display: inline-block;
+    color: white;
+    background: var(--primary-color);
+    min-width: 170px;
+    padding: 20px 15px;
+    border-radius: 5px;
+}
