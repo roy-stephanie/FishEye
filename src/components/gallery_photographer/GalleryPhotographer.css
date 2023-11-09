@@ -1,4 +1,4 @@
-.GalleryPhotographer_Gallery {
+.Photographer_Gallery {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -6,26 +6,27 @@
     gap: 25px;
 }
 
-.GalleryPhotographer_Gallery > div  {
+.Photographer_Gallery > div  {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 30%;
+    cursor: pointer;
 }
 
-.GalleryPhotographer_Gallery > div > div > div:last-child {
+.Photographer_Gallery_Info > div:last-child {
     width: 100%;
     display: flex;
     justify-content: flex-end;
     gap: 5px;
 }
 
-.GalleryPhotographer_Gallery_Content {
+.Photographer_Gallery_Info {
     line-height: 32px;
     display: flex;
 }
 
-.GalleryPhotographer_Gallery_Content > div:first-child {
+.Photographer_Gallery_Info > div:first-child {
     width: 100%;
     font-size: 14px;
     line-height: 24px;
@@ -33,6 +34,7 @@
 }
 
 
+/*
 @media only screen and (min-width: 768px) {
     .GalleryPhotographer_Gallery {
         gap: 35px;
@@ -80,4 +82,5 @@
         line-height: 32px;
     }
 }
+*/
 

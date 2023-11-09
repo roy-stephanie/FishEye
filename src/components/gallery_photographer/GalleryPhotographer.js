@@ -1,16 +1,17 @@
 import LikesAndHeart from '../likes_and_heart/LikesAndHeart';
-import './GalleryPhotographer.css';
 import { useEffect, useState } from 'react';
 import LikesAndPrice from '../likes_and_price/LikesAndPrice';
-import GalleryImage from '../gallery_image/GalleryImage';
-import GalleryVideo from '../gallery_video/GalleryVideo';
 import LightBoxMedia from '../lightbox/LightBoxMedia';
+import MediaRender from '../lightbox/MediaRender';
+import UseScreenWidth from '../../utils/useScreenWidth';
+import './GalleryPhotographer.css';
 
 export default function GalleryPhotographer({ photographer, imagesPhotographer }) {
   const host = window.location.host;
+  const widthScreen = UseScreenWidth();
   const [photographerLikes, setPhotographerLikes] = useState(0);
   const [openLightBox, setOpenLightBox] = useState(false);
-  const [imageForLightBox, setImageForLightBox] = useState({})
+  const [imageForLightBox, setImageForLightBox] = useState({});
 
   const handleCountLikes = (count) => {
     setPhotographerLikes(prevState => prevState + count);
@@ -18,7 +19,7 @@ export default function GalleryPhotographer({ photographer, imagesPhotographer }
 
   const handleOpenLightBox = (image) => {
     setOpenLightBox(prevState => !prevState);
-    setImageForLightBox(image.target);
+    setImageForLightBox(image);
   };
 
   useEffect(() => {
@@ -27,29 +28,25 @@ export default function GalleryPhotographer({ photographer, imagesPhotographer }
       totalLikes = totalLikes + img.likes;
     });
     setPhotographerLikes(totalLikes);
-  }, [imagesPhotographer]);
+  }, [imagesPhotographer, photographer]);
 
   return (
     <>
-      <section className='GalleryPhotographer'>
+      <section>
         <header>
           Trier par button
         </header>
 
         {!openLightBox ?
-          <div className='GalleryPhotographer_Gallery'>
+          <div className='Photographer_Gallery'>
             {imagesPhotographer && imagesPhotographer.map((image, index) => {
               return (
-                <div key={`${index}`}>
-                  <div onClick={e => handleOpenLightBox(e)}>
-                    {image.image &&
-                      <GalleryImage host={host} photographerId={photographer.id} image={image} />
-                    }
-                    {image.video &&
-                      <GalleryVideo host={host} photographerId={photographer.id} video={image.video} />
-                    }
+                <div key={`media-${index}`}>
+                  <div onClick={e => handleOpenLightBox(image)}>
+                    <MediaRender host={host} widthScreen={widthScreen} photographerId={photographer.id} image={image}
+                                 alt={'alt'} />
                   </div>
-                  <div className='GalleryPhotographer_Gallery_Content'>
+                  <div className='Photographer_Gallery_Info'>
                     <div>{image.title}</div>
                     <LikesAndHeart likes={image.likes} countLikes={count => handleCountLikes(count)} />
                   </div>
@@ -57,10 +54,12 @@ export default function GalleryPhotographer({ photographer, imagesPhotographer }
               );
             })}
           </div>
-          : <LightBoxMedia image={imageForLightBox} imagesPhotographer={imagesPhotographer} closeLightBox={e => handleOpenLightBox(e)} />}
+          :
+          <LightBoxMedia host={host} widthScreen={widthScreen} photographerId={photographer.id} image={imageForLightBox}
+                         imagesPhotographer={imagesPhotographer} closeLightBox={e => handleOpenLightBox(e)} />}
 
       </section>
-      <LikesAndPrice likes={photographerLikes} price={photographer.price} />
+      {!openLightBox && <LikesAndPrice likes={photographerLikes} price={photographer.price} />}
     </>
   );
 }
