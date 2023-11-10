@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 30%;
+    width: 100%;
     cursor: pointer;
 }
 
@@ -28,7 +28,7 @@
 
 .Photographer_Gallery_Info > div:first-child {
     width: 100%;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 24px;
     color: var(--primary-color);
 }
@@ -38,53 +38,36 @@
     margin-bottom: 20px;
 }
 
-/*
+
 @media only screen and (min-width: 768px) {
-    .GalleryPhotographer_Gallery {
-        gap: 35px;
-    }
-    .GalleryPhotographer_Gallery > div {
-        width: 30%;
-    }
-    .GalleryPhotographer_Gallery_Content {
-        line-height: 32px;
-    }
-    .GalleryPhotographer_Gallery_Content > div:first-child {
+    .Photographer_Gallery_Info > div:first-child {
         font-size: 16px;
         line-height: 26px;
     }
 }
 
 @media only screen and (min-width: 992px) {
-    .GalleryPhotographer_Gallery {
+    .Photographer_Gallery {
         gap: 35px;
     }
-    .GalleryPhotographer_Gallery > div {
+    .Photographer_Gallery > div {
         width: 29%;
     }
-    .GalleryPhotographer_Gallery_Content {
-        line-height: 32px;
-    }
-    .GalleryPhotographer_Gallery_Content > div:first-child {
+    .Photographer_Gallery_Info > div:first-child {
         font-size: 18px;
         line-height: 28px;
     }
 }
 
 @media only screen and (min-width: 1200px) {
-    .GalleryPhotographer_Gallery {
+    .Photographer_Gallery {
         gap: 45px;
     }
-    .GalleryPhotographer_Gallery > div {
+    .Photographer_Gallery > div {
         width: 30%;
     }
-    .GalleryPhotographer_Gallery_Content {
-        line-height: 32px;
-    }
-    .GalleryPhotographer_Gallery_Content > div:first-child {
+    .Photographer_Gallery_Info > div:first-child {
         font-size: 22px;
         line-height: 32px;
     }
 }
-*/
-
