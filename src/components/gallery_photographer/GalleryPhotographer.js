@@ -30,7 +30,6 @@ export default function GalleryPhotographer({ photographer, imagesPhotographer }
   }
 
   useEffect(() => {
-    console.log(imagesPhotographer);
     setSortImagesPhotographer(SortImages(imagesPhotographer, 'popularity'));
     let totalLikes = 0;
     imagesPhotographer.map(img => {

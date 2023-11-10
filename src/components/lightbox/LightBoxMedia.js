@@ -9,10 +9,6 @@ export default function LightBoxMedia({ host, widthScreen, photographerId, image
   const [current, setCurrent] = useState(imagesPhotographer.findIndex(e => e.id === image.id));
   const [imagesPhotographerLength, setImagesPhotographerLength] = useState(imagesPhotographer.length);
 
-  useEffect(() => {
-    console.log(current);
-  }, [current]);
-
   const slideRight = () => {
     setCurrent(current === imagesPhotographerLength - 1 ? 0 : current + 1);
   };
