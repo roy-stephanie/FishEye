@@ -44,19 +44,17 @@
     justify-content: flex-start;
     align-items: flex-start;
     font-size: 64px;
+    padding: 20px 50px;
 }
 
 .HeaderPhotographer_Portrait {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    height: 200px;
 }
 
 .HeaderPhotographer_Portrait > img {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     object-fit: cover;
 }

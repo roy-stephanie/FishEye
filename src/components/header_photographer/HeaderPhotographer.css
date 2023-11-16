@@ -2,6 +2,7 @@
 
 .HeaderPhotographer {
     width: 100%;
+    padding: 20px 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,12 +11,6 @@
 }
 
 .HeaderPhotographer > div {
-    width: 30%;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
     gap: 20px;
     text-align:  center;
 }
@@ -36,7 +31,10 @@
 }
 
 .HeaderPhotographer > div:first-child {
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 @media only screen and (min-width: 552px) {
@@ -49,6 +47,10 @@
     .HeaderPhotographer {
         justify-content: space-between;
         flex-direction: row;
+    }
+    .HeaderPhotographer > div:first-child {
+        justify-content: space-between;
+        align-items: flex-start;
     }
     .HeaderPhotographer_Name {
         font-size: 34px;
