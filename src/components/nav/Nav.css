@@ -2,18 +2,16 @@
 
 .Nav {
     display: flex;
-    justify-content: space-between;
     align-content: center;
-    align-items: center;
-    height: 100px;
-    padding: 20px 0;
+    justify-content: space-between;
     font-size: 18px;
     list-style-type: none;
     color: var(--primary-color);
+    margin-top: 30px;
 }
 
 .Nav > li {
-    margin: 0 25px;
+    margin: 0 30px;
 }
 
 .Nav > li > a {
@@ -29,11 +27,9 @@
     .Nav {
         font-size: 26px;
     }
-
     .Nav > li {
-        margin: 0 150px;
+        margin: 0 60px;
     }
-
     .Nav_Logo {
         width: 150px;
     }
@@ -43,11 +39,9 @@
     .Nav {
         font-size: 36px;
     }
-
     .Nav > li {
-        margin: 0 250px;
+        margin: 0 80px;
     }
-
     .Nav_Logo {
         width: 200px;
     }
