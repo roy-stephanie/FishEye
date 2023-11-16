@@ -74,6 +74,9 @@
         width: 220px;
         height: 220px;
     }
+    .CardPhotographer_Container_Img > a:focus {
+        border: 10px #707070 solid;
+    }
     .CardPhotographer_Name {
         font-size: 30px;
     }

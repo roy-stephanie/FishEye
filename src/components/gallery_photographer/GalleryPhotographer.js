@@ -51,10 +51,10 @@ export default function GalleryPhotographer({ photographer, imagesPhotographer }
             {sortImagesPhotographer && sortImagesPhotographer.map((image, index) => {
               return (
                 <div key={`media-${index}`}>
-                  <div onClick={e => handleOpenLightBox(image)}>
+                  <button onClick={e => handleOpenLightBox(image)} tabIndex={index + 10}>
                     <MediaRender host={host} widthScreen={widthScreen} photographerId={photographer.id} image={image}
                                  alt={'alt'} />
-                  </div>
+                  </button>
                   <div className='Photographer_Gallery_Info'>
                     <div>{image.title}</div>
                     <LikesAndHeart likes={image.likes} countLikes={count => handleCountLikes(count)} />

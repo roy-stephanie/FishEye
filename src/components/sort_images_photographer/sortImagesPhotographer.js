@@ -9,7 +9,7 @@ export default function SortImagesPhotographer({ sort }) {
     <form action='/'>
       <label htmlFor='popularity' className='SortImagesPhotographerLabel'>Trier par</label>
       <select name='popularity' id='popularity' className='SortImagesPhotographerDropdown'
-              onChange={e => handleSort(e)}>
+              onChange={e => handleSort(e)} tabIndex={8}>
         <option value='popularity'>Popularité</option>
         <option value='date'>Date</option>
         <option value='title'>Titre</option>

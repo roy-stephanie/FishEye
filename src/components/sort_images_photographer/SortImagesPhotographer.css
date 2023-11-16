@@ -9,5 +9,11 @@
     background: var(--primary-color);
     min-width: 170px;
     padding: 20px 15px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.SortImagesPhotographerDropdown > option {
+    border: 0;
     border-radius: 5px;
 }

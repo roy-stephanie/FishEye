@@ -31,6 +31,12 @@
     cursor: pointer;
 }
 
+.LightboxLeft > button,
+.LightboxRight > button {
+    border: 0;
+    background: transparent;
+}
+
 .LightboxRight {
     display: flex;
     flex-direction: column;

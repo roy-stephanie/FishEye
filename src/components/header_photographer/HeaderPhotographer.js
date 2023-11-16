@@ -14,7 +14,7 @@ export default function HeaderPhotographer({ photographer }) {
         <div className='HeaderPhotographer_TagLine'>{photographer.tagline}</div>
       </div>
       <div>
-        <FormButton photographer={photographer} />
+        <FormButton photographer={photographer}/>
       </div>
       <div className='HeaderPhotographer_Portrait'>
         <img src={`http://${host}/images/photographers/Photographers-ID-Photos/${photographer.portrait}`} alt={`${photographer.name}`} />

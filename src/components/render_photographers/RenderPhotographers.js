@@ -22,7 +22,7 @@ export default function RenderPhotographers() {
     <div className='ViewPhotographers'>
       {photographers.map((photographer, index) => {
         return (
-          <CardPhotographer key={`${photographer.id}-${index}`} photographer={photographer} />
+          <CardPhotographer key={`${photographer.id}-${index}`} photographer={photographer} tabIndex={index} />
         );
       })}
     </div>

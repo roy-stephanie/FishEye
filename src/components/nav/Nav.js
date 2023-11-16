@@ -14,7 +14,7 @@ export default function Nav() {
   return (
     <ul className='Nav'>
       <li>
-        <NavLink to='/' onClick={handleActive}>
+        <NavLink to='/' onClick={handleActive} tabIndex={1}>
           <img className='Nav_Logo' src={`http://${host}/images/logo.png`} alt='Logo FishEye' />
         </NavLink>
       </li>

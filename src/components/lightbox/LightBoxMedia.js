@@ -17,18 +17,34 @@ export default function LightBoxMedia({ host, widthScreen, photographerId, image
     setCurrent(current === 0 ? imagesPhotographerLength - 1 : current - 1);
   };
 
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        closeLightBox();
+      }
+    };
+
+    // Ajoute un écouteur d'événement lorsque le composant est monté
+    document.addEventListener('keydown', handleKeyDown);
+
+    // Nettoie l'écouteur d'événement lorsque le composant est démonté
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
   return (
     <div className='Lightbox'>
       <div>
         <div className='LightboxLeft' onClick={slideLeft}>
-          <img src={left} alt='Image de Gauche' />
+          <button><img src={left} alt='Image de Gauche' tabIndex={1} /></button>
         </div>
         <MediaRender host={host} widthScreen={widthScreen} videoControl={true} videoResize={false} photographerId={photographerId} image={imagesPhotographer[current]} alt={'alt'} />
         <div className='LightboxRight' onClick={slideRight}>
           <div className='LightboxClose' onClick={() => closeLightBox()}>
             <img src={close} alt='Close LightBox' />
           </div>
-          <img src={right} alt='Image de Droite' />
+          <button><img src={right} alt='Image de Droite' tabIndex={2} /></button>
         </div>
       </div>
     </div>
