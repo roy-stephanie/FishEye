@@ -27,7 +27,7 @@ export default function MediaRender(
     const img = new Image();
     img.src = imageUrl;
 
-    if (img.width > img.height) {
+    if (img.naturalWidth > img.naturalHeight) {
       style = {
         ...style,
         backgroundPosition: 'center',
