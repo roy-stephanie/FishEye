@@ -18,20 +18,24 @@ export default function LightBoxMedia({ host, widthScreen, photographerId, image
   };
 
   useEffect(() => {
-    const handleKeyDown = (event) => {
+    const handleKey = (event) => {
       if (event.key === 'Escape') {
         closeLightBox();
+      } else if (event.key === 'ArrowLeft') {
+        slideLeft();
+      }else if (event.key === 'ArrowRight') {
+        slideRight();
       }
     };
 
     // Ajoute un écouteur d'événement lorsque le composant est monté
-    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('keydown', handleKey);
 
     // Nettoie l'écouteur d'événement lorsque le composant est démonté
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('keydown', handleKey);
     };
-  }, []);
+  }, [current]);
 
   return (
     <div className='Lightbox'>
