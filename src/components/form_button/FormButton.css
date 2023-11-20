@@ -30,31 +30,33 @@
 
 .FormButton_Modal_Close {
     position: absolute;
-    top: 25px;
-    right: 25px;
-    font-size: 25px;
+    top: 15px;
+    right: 15px;
+    width: 15px;
+    height: 15px;
     color: white;
     cursor: pointer;
-    content: '';
 }
 
 .FormButton_Modal_Content {
+    font-size: 22px;
+}
+
+.FormButton_Modal_Content > div {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    font-size: 64px;
-    margin-bottom: 40px;
 }
 
 .HeaderPhotographer_Portrait {
+    display: flex;
+    justify-content: flex-end;
     width: 200px;
     height: 200px;
 }
 
 .HeaderPhotographer_Portrait > img {
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -66,6 +68,15 @@
         font-size: 12px;
         margin: 10px 0;
     }
+    .FormButton_Modal_Content {
+        font-size: 24px;
+    }
+    .FormButton_Modal_Close {
+        top: 17px;
+        right: 17px;
+        width: 17px;
+        height: 17px;
+    }
 }
 
 @media only screen and (min-width: 992px) {
@@ -74,6 +85,15 @@
         height: 49px;
         font-size: 15px;
     }
+    .FormButton_Modal_Content {
+        font-size: 34px;
+    }
+    .FormButton_Modal_Close {
+        top: 22px;
+        right: 22px;
+        width: 22px;
+        height: 22px;
+    }
 }
 
 @media only screen and (min-width:1200px)  {
@@ -81,5 +101,14 @@
         width: 170px;
         height: 69px;
         font-size: 20px;
+    }
+    .FormButton_Modal_Content {
+        font-size: 44px;
+    }
+    .FormButton_Modal_Close {
+        top: 30px;
+        right: 30px;
+        width: 30px;
+        height: 30px;
     }
 }

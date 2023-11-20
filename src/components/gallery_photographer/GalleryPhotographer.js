@@ -53,7 +53,7 @@ export default function GalleryPhotographer({ photographer, imagesPhotographer }
                 <div key={`media-${index}`}>
                   <button onClick={e => handleOpenLightBox(image)} tabIndex={index + 10}>
                     <MediaRender host={host} widthScreen={widthScreen} photographerId={photographer.id} image={image}
-                                 alt={'alt'} />
+                                 objectFit={'cover'} alt={'alt'} />
                   </button>
                   <div className='Photographer_Gallery_Info'>
                     <div>{image.title}</div>

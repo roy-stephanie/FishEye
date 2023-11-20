@@ -9,17 +9,20 @@ export default function MediaRender(
     videoResize = true,
     photographerId,
     image,
+    objectFit = 'contain',
     alt,
   },
 ) {
   const imageUrl = `http://${host}/images/photographers/${photographerId}/${image.image}`;
 
   let style = {
-    backgroundSize: 'cover',
+    backgroundSize: objectFit,
     backgroundOrigin: 'border-box',
     backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
     borderRadius: '5px',
     width: '100%',
+    height: '100%',
     minHeight: `${widthScreen / 4.5}px`,
   };
 
@@ -30,12 +33,10 @@ export default function MediaRender(
     if (img.naturalWidth > img.naturalHeight) {
       style = {
         ...style,
-        backgroundPosition: 'center',
       };
     } else {
       style = {
         ...style,
-        backgroundPosition: 'center top',
       };
     }
   }, [image]);

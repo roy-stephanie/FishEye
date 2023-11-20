@@ -19,11 +19,12 @@ export default function LightBoxMedia({ host, widthScreen, photographerId, image
 
   useEffect(() => {
     const handleKey = (event) => {
+      console.log(event.key);
       if (event.key === 'Escape') {
         closeLightBox();
-      } else if (event.key === 'ArrowLeft') {
+      } else if (event.key === 'ArrowLeft' || event.key === '4') {
         slideLeft();
-      }else if (event.key === 'ArrowRight') {
+      }else if (event.key === 'ArrowRight' || event.key === '6') {
         slideRight();
       }
     };
