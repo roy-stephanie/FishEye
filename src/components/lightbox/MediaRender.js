@@ -24,6 +24,7 @@ export default function MediaRender(
     width: '100%',
     height: '100%',
     minHeight: `${widthScreen / 4.5}px`,
+    cursor: 'pointer',
   };
 
   useEffect(() => {

@@ -1,39 +1,102 @@
-.SortImagesPhotographerLabel {
-    margin-right: 10px;
+.SortImagesPhotographer {
 }
 
-.SortImagesPhotographerDropdown {
-    position: relative;
-    display: inline-block;
+.SortImagesPhotographer button {
+    padding: 15px 18px;
+    border: 0;
     color: white;
     background: var(--primary-color);
-    min-width: 100px;
-    padding: 10px 15px;
-    border: 0;
+    width: 140px;
+    text-align: left;
+}
+
+.SortImagesPhotographerSelect {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     border-radius: 5px;
 }
 
-.SortImagesPhotographerDropdown > option {
-    border: 0;
+.SortImagesPhotographerSelect > button:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.SortImagesPhotographerSelectSVG {
+
+}
+
+.SortImagesPhotographerOption {
+    position: absolute;
+    top: 100%;
     border-radius: 5px;
+}
+
+.SortImagesPhotographerOption div {
+    position: relative;
+}
+
+.SortImagesPhotographerOption div > button::before {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 1px;
+    background-color: white;
+    top: 0;
+    left: 15px;
+}
+
+.SortImagesPhotographerOption div:last-child button:last-child {
+    border-radius: 0 0 5px 5px;
+}
+
+.SelectActive {
+    border-radius: 5px 5px 0 0;
+}
+
+.SelectInActive {
+    border-radius: 5px;
+}
+
+.rotate180 {
+    transform: rotate(180deg);
+    animation-name: rotateSelectOpen;
+    animation-duration: .5s;
+}
+
+.rotate0 {
+    transform: rotate(0deg);
+    animation-name: rotateSelectClose;
+    animation-duration: .5s;
 }
 
 @media only screen and (min-width: 552px) {
-    .SortImagesPhotographerDropdown {
-        min-width: 130px;
-        padding: 15px 15px;
-    }
+
 }
 
 @media only screen and (min-width: 992px) {
-    .SortImagesPhotographerDropdown {
-        min-width: 150px;
-        padding: 20px 15px;
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+}
+
+@keyframes rotateSelectOpen {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
     }
 }
 
-@media only screen and (min-width:1200px)  {
-    .SortImagesPhotographerDropdown {
-        min-width: 170px;
+@keyframes rotateSelectClose {
+    from {
+        transform: rotate(180deg);
+    }
+    to {
+        transform: rotate(0deg);
     }
 }

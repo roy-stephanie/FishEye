@@ -30,7 +30,7 @@ export default function GalleryPhotographer({ photographer, imagesPhotographer }
   }
 
   useEffect(() => {
-    setSortImagesPhotographer(SortImages(imagesPhotographer, 'popularity'));
+    setSortImagesPhotographer(SortImages(imagesPhotographer, 'Popularité'));
     let totalLikes = 0;
     imagesPhotographer.map(img => {
       totalLikes = totalLikes + img.likes;
@@ -40,9 +40,10 @@ export default function GalleryPhotographer({ photographer, imagesPhotographer }
 
   return (
     <>
-      <section>
+      <section className='Photographer_Gallery_Section'>
         <header>
-          <div className='Photographer_Gallery_Sort'>
+          <div>
+            <div>Trier par </div>
             <SortImagesPhotographer sort={handleSort} />
           </div>
         </header>
@@ -51,7 +52,7 @@ export default function GalleryPhotographer({ photographer, imagesPhotographer }
             {sortImagesPhotographer && sortImagesPhotographer.map((image, index) => {
               return (
                 <div key={`media-${index}`}>
-                  <button onClick={e => handleOpenLightBox(image)} tabIndex={index + 10}>
+                  <button onClick={e => handleOpenLightBox(image)} tabIndex={index + 12}>
                     <MediaRender host={host} widthScreen={widthScreen} photographerId={photographer.id} image={image}
                                  objectFit={'cover'} alt={'alt'} />
                   </button>

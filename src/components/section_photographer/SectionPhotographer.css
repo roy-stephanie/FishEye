@@ -45,16 +45,16 @@
 .CardPhotographer_Location {
     display: flex;
     gap: 5px;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--primary-color);
 }
 
 .CardPhotographer_TagLine {
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .CardPhotographer_Price {
-    font-size: 9px;
+    font-size: 12px;
     line-height: 12px;
     color: var(--tertiary-color);
 }
@@ -80,6 +80,15 @@
     .CardPhotographer_Name {
         font-size: 30px;
     }
+    .CardPhotographer_Location {
+        font-size: 16px;
+    }
+    .CardPhotographer_TagLine {
+        font-size: 16px;
+    }
+    .CardPhotographer_Price {
+        font-size: 14px;
+    }
 }
 
 @media only screen and (min-width:1200px)  {
@@ -92,5 +101,14 @@
     }
     .CardPhotographer_Name {
         font-size: 36px;
+    }
+    .CardPhotographer_Location {
+        font-size: 18px;
+    }
+    .CardPhotographer_TagLine {
+        font-size: 18px;
+    }
+    .CardPhotographer_Price {
+        font-size: 16px;
     }
 }

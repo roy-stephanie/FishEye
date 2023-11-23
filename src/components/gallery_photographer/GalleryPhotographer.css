@@ -1,3 +1,16 @@
+.Photographer_Gallery_Section > header > div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.Photographer_Gallery_Section > header > div > div:first-child {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
 .Photographer_Gallery {
     display: flex;
     justify-content: space-between;
@@ -35,12 +48,6 @@
     line-height: 24px;
     color: var(--primary-color);
 }
-
-.Photographer_Gallery_Sort {
-    margin-top: 5px;
-    margin-bottom: 20px;
-}
-
 
 @media only screen and (min-width: 768px) {
     .Photographer_Gallery_Info > div:first-child {
