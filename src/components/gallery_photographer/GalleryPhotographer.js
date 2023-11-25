@@ -9,7 +9,6 @@ import SortImages from '../../utils/sortImages';
 import './GalleryPhotographer.css';
 
 export default function GalleryPhotographer({ photographer, imagesPhotographer }) {
-  const host = window.location.host;
   const widthScreen = UseScreenWidth();
   const [sortImagesPhotographer, setSortImagesPhotographer] = useState(imagesPhotographer);
   const [photographerLikes, setPhotographerLikes] = useState(0);
@@ -52,9 +51,9 @@ export default function GalleryPhotographer({ photographer, imagesPhotographer }
             {sortImagesPhotographer && sortImagesPhotographer.map((image, index) => {
               return (
                 <div key={`media-${index}`}>
-                  <button onClick={e => handleOpenLightBox(image)} tabIndex={index + 12}>
-                    <MediaRender host={host} widthScreen={widthScreen} photographerId={photographer.id} image={image}
-                                 objectFit={'cover'} alt={'alt'} />
+                  <button onClick={e => handleOpenLightBox(image)} aria-label={`Photo: ${image.title}`} tabIndex={index + 12}>
+                    <MediaRender widthScreen={widthScreen} photographerId={photographer.id} image={image}
+                                 objectFit={'cover'}/>
                   </button>
                   <div className='Photographer_Gallery_Info'>
                     <div>{image.title}</div>
@@ -64,7 +63,7 @@ export default function GalleryPhotographer({ photographer, imagesPhotographer }
               );
             })}
           </div> :
-          <LightBoxMedia host={host} widthScreen={widthScreen} photographerId={photographer.id} image={imageForLightBox}
+          <LightBoxMedia widthScreen={widthScreen} photographerId={photographer.id} image={imageForLightBox}
                          imagesPhotographer={sortImagesPhotographer} closeLightBox={e => handleOpenLightBox(e)} />
         }
       </section>

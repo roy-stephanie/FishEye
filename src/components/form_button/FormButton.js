@@ -27,7 +27,7 @@ export default function FormButton({ photographer }) {
 
   return (
     <>
-      <button className='FormButton' onClick={handleClick} tabIndex={2}>
+      <button className='FormButton' onClick={handleClick} aria-label={'Contactez-moi'} tabIndex={2}>
         Contactez-moi
       </button>
       {state &&

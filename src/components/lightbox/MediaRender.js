@@ -3,7 +3,6 @@ import GalleryVideo from '../gallery_video/GalleryVideo';
 
 export default function MediaRender(
   {
-    host,
     widthScreen,
     videoControl = false,
     videoResize = true,
@@ -13,7 +12,7 @@ export default function MediaRender(
     alt,
   },
 ) {
-  const imageUrl = `http://${host}/images/photographers/${photographerId}/${image.image}`;
+  const imageUrl = `/images/photographers/${photographerId}/${image.image}`;
 
   let style = {
     backgroundSize: objectFit,
@@ -64,7 +63,7 @@ export default function MediaRender(
           ...style,
         },
       },
-      <GalleryVideo host={host} widthScreen={widthScreen} videoControl={videoControl} videoResize={videoResize}
+      <GalleryVideo widthScreen={widthScreen} videoControl={videoControl} videoResize={videoResize}
                     photographerId={photographerId}
                     video={image.video} />,
     );

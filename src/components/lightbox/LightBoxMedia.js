@@ -5,7 +5,7 @@ import right from './img/right.png';
 import close from './img/close.png';
 import './LightBoxMedia.css';
 
-export default function LightBoxMedia({ host, widthScreen, photographerId, image, imagesPhotographer, closeLightBox }) {
+export default function LightBoxMedia({ widthScreen, photographerId, image, imagesPhotographer, closeLightBox }) {
   const [current, setCurrent] = useState(imagesPhotographer.findIndex(e => e.id === image.id));
   const [imagesPhotographerLength, setImagesPhotographerLength] = useState(imagesPhotographer.length);
 
@@ -44,7 +44,7 @@ export default function LightBoxMedia({ host, widthScreen, photographerId, image
         <div className='LightboxLeft' onClick={slideLeft}>
           <button><img src={left} alt='Image de Gauche' tabIndex={1} /></button>
         </div>
-        <MediaRender host={host} widthScreen={widthScreen} videoControl={true} videoResize={false} photographerId={photographerId} image={imagesPhotographer[current]} alt={'alt'} />
+        <MediaRender widthScreen={widthScreen} videoControl={true} videoResize={false} photographerId={photographerId} image={imagesPhotographer[current]} alt={'alt'} />
         <div className='LightboxRight' onClick={slideRight}>
           <div className='LightboxClose' onClick={() => closeLightBox()}>
             <img src={close} alt='Close LightBox' />

@@ -1,6 +1,6 @@
 import './GalleryVideo.css';
 
-export default function GalleryVideo({ host, widthScreen, videoControl, videoResize, photographerId, video }) {
+export default function GalleryVideo({ widthScreen, videoControl, videoResize, photographerId, video }) {
   const videoStyle = {
     height: videoResize ? `${widthScreen / 4.5}px` : '100%',
   };
@@ -9,7 +9,7 @@ export default function GalleryVideo({ host, widthScreen, videoControl, videoRes
     return (
       <div className='GalleryVideo'>
         <video controls style={videoStyle}>
-          <source src={`http://${host}/images/photographers/${photographerId}/${video}`} type='video/mp4' />
+          <source src={`/images/photographers/${photographerId}/${video}`} type='video/mp4' />
         </video>
       </div>
     );
@@ -17,7 +17,7 @@ export default function GalleryVideo({ host, widthScreen, videoControl, videoRes
     return (
       <div className='GalleryVideo'>
         <video style={videoStyle}>
-          <source src={`http://${host}/images/photographers/${photographerId}/${video}`} type='video/mp4' />
+          <source src={`/images/photographers/${photographerId}/${video}`} type='video/mp4' />
         </video>
       </div>
     );

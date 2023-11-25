@@ -6,7 +6,7 @@ export default function SectionPhotographer({photographer, tabIndex}) {
         <section className="CardPhotographer">
             <div className="CardPhotographer_Container">
                 <div className="CardPhotographer_Container_Img">
-                    <a href={`/photographer/${photographer.id}`} tabIndex={tabIndex + 2}>
+                    <a href={`/photographer/${photographer.id}`} aria-label={`Photographe: ${photographer.name}`} tabIndex={tabIndex + 2}>
                         <img className="CardPhotographer_Img" src={`/images/photographers/Photographers-ID-Photos/${photographer.portrait}`} alt=""/>
                     </a>
                 </div>
