@@ -21,6 +21,7 @@ export default function MediaRender(
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     borderRadius: '5px',
+    backgroundColor: 'transparent',
     width: '100%',
     height: '100%',
     minHeight: `${widthScreen / 4.5}px`,

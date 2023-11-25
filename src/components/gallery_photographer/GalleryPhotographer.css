@@ -27,8 +27,9 @@
     cursor: pointer;
 }
 
-.Photographer_Gallery > div > button  {
+.Photographer_Gallery > div > button {
     border: 0;
+    background: transparent;
 }
 
 .Photographer_Gallery_Info > div:last-child {

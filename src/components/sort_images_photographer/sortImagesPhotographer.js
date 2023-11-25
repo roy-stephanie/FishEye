@@ -25,11 +25,25 @@ export default function SortImagesPhotographer({ sort }) {
     setOpenOption(prevState => !prevState);
   };
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (openOption && (e.key === 'Escape')) {
+        handleOpenOption();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [openOption]);
+
   return (
     <div className={'SortImagesPhotographer'}>
 
       <div className={'SortImagesPhotographerSelect'}>
-        <button className={`${openOption ? 'SelectActive ' : 'SelectInActive'}`} onClick={() => {
+        <button className={`${openOption ? 'SelectActive ' : 'SelectInActive'}`} tabIndex={8} onClick={() => {
           handleOpenOption();
           sortChoiceTypes(choiceSelectSort);
         }}>
@@ -43,8 +57,8 @@ export default function SortImagesPhotographer({ sort }) {
         </button>
         <div className={'SortImagesPhotographerOption'}>
           {openOption && choiceOptionSort.map((sortType, index) => {
-            return <div>
-              <button key={`sort-${index}`} onClick={() => sortChoiceTypes(sortType)}>{sortType}</button>
+            return <div key={`sort-${index}`}>
+              <button tabIndex={8 + index} onClick={() => sortChoiceTypes(sortType)}>{sortType}</button>
             </div>;
           })}
         </div>

@@ -1,3 +1,21 @@
 .RenderPhotographer {
-    padding: 0 50px;
+    padding: 0 5px;
+}
+
+@media only screen and (min-width: 552px) {
+    .RenderPhotographer {
+        padding: 0 25px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .RenderPhotographer {
+        padding: 0 40px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .RenderPhotographer {
+        padding: 0 50px;
+    }
 }
