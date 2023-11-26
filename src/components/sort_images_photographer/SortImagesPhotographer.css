@@ -37,6 +37,10 @@
     position: relative;
 }
 
+.SortImagesPhotographerOption div > button {
+    cursor: pointer;
+}
+
 .SortImagesPhotographerOption div > button::before {
     content: "";
     position: absolute;
@@ -53,10 +57,12 @@
 
 .SelectActive {
     border-radius: 5px 5px 0 0;
+    cursor: pointer;
 }
 
 .SelectInActive {
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .rotate180 {

@@ -2,7 +2,6 @@ import './HeaderPhotographer.css';
 import FormButton from '../form_button/FormButton';
 
 export default function HeaderPhotographer({ photographer }) {
-  const host = window.location.host;
 
   return (
     <div className='HeaderPhotographer'>
@@ -17,7 +16,7 @@ export default function HeaderPhotographer({ photographer }) {
         <FormButton photographer={photographer}/>
       </div>
       <div className='HeaderPhotographer_Portrait'>
-        <img src={`http://${host}/images/photographers/Photographers-ID-Photos/${photographer.portrait}`} alt={`${photographer.name}`} />
+        <img src={`/public/images/photographers/Photographers-ID-Photos/${photographer.portrait}`} alt={`${photographer.name}`} />
       </div>
     </div>
   );
