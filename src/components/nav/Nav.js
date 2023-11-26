@@ -14,7 +14,7 @@ export default function Nav() {
     <ul className='Nav'>
       <li>
         <NavLink to='/' onClick={handleActive} aria-label={'Logo FishEye'} tabIndex={1}>
-          <img className='Nav_Logo' src={`/public/images/logo.png`} alt='Logo FishEye' />
+          <img className='Nav_Logo' src={`/images/logo.png`} alt='Logo FishEye' />
         </NavLink>
       </li>
       {location.pathname === '/' ? <li>Nos photographes</li> : <li></li>}

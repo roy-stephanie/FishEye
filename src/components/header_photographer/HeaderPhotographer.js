@@ -16,7 +16,7 @@ export default function HeaderPhotographer({ photographer }) {
         <FormButton photographer={photographer}/>
       </div>
       <div className='HeaderPhotographer_Portrait'>
-        <img src={`/public/images/photographers/Photographers-ID-Photos/${photographer.portrait}`} alt={`${photographer.name}`} />
+        <img src={`/images/photographers/Photographers-ID-Photos/${photographer.portrait}`} alt={`${photographer.name}`} />
       </div>
     </div>
   );

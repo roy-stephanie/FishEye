@@ -19,7 +19,6 @@ export default function LightBoxMedia({ widthScreen, photographerId, image, imag
 
   useEffect(() => {
     const handleKey = (event) => {
-      console.log(event.key);
       if (event.key === 'Escape') {
         closeLightBox();
       } else if (event.key === 'ArrowLeft' || event.key === '4') {
