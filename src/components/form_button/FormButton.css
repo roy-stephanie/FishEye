@@ -15,6 +15,12 @@
     cursor: pointer;
 }
 
+.FormButton:hover,
+.FormButton:focus {
+    background: var(--secondary-color);
+    color: black;
+}
+
 .FormButton_Modal {
     position: absolute;
     top: 50%;
