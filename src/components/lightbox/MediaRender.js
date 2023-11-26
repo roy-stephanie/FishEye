@@ -27,21 +27,6 @@ export default function MediaRender(
     cursor: 'pointer',
   };
 
-  useEffect(() => {
-    const img = new Image();
-    img.src = imageUrl;
-
-    if (img.naturalWidth > img.naturalHeight) {
-      style = {
-        ...style,
-      };
-    } else {
-      style = {
-        ...style,
-      };
-    }
-  }, [image]);
-
   if (image.image) {
     return createElement(
       'div',
