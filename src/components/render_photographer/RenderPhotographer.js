@@ -28,8 +28,8 @@ export default function RenderPhotographer({ id }) {
 
   return (
     <section className='RenderPhotographer'>
-      <HeaderPhotographer photographer={photographer} />
-      <GalleryPhotographer photographer={photographer} imagesPhotographer={imagesPhotographer} />
+      {photographer ? <HeaderPhotographer photographer={photographer} />: <div>Aucun photographe sous cette ID !</div>}
+      {photographer && <GalleryPhotographer photographer={photographer} imagesPhotographer={imagesPhotographer} />}
     </section>
   );
 }
