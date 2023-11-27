@@ -12,7 +12,6 @@ export default function App() {
           <Route path='/' element={<Layout />}>
             <Route index element={<Photographers />} />
             <Route path='/photographer/:id' element={<Photographer />} />
-            <Route path='/post' element={<div></div>} />
           </Route>
         </Routes>
       </Router>
